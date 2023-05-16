@@ -36,9 +36,10 @@ function playRound(playerSelection, computerSelection) {
 function game(number) {
     let computerWins = 0;
     let playerWins = 0;
+    let turnCount = number;
     const computerSelection = getComputerChoice();
     for(let i = 0; i < number; i ++) {
-        const playerSelection = prompt("Enter rock, paper, or scissors");
+        const playerSelection = prompt("Enter rock, paper, or scissors (times: " + turnCount + ")");
         playRound(playerSelection, computerSelection);
         if (playRound(playerSelection, computerSelection) == 1) {
             computerWins ++;
@@ -46,16 +47,17 @@ function game(number) {
         else {
             playerWins ++;
         }
+        turnCount --;
     }
 
     if (computerWins > playerWins) {
-        console.log("You Lose!");
+        alert("You Lose!");
     }
     else if (computerWins == playerWins){
-        console.log("It's a Tie!");
+        alert("It's a Tie!");
     }
     else if (computerWins < playerWins) {
-        console.log("You Win!");
+        alert("You Win!");
     }
 }
 
