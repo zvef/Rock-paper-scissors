@@ -2,8 +2,8 @@
 let rock = "rock";
 let paper = "paper";
 let scissors = "scissors";
-let computerWins;
-let playerWins;
+const playerWmsg = "You Win!";
+const computerWmsg = "You Lose!";
 let number = Math.floor(Math.random()*3);
 
 function getComputerChoice() {
@@ -33,16 +33,30 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
+function game(number) {
+    let computerWins = 0;
+    let playerWins = 0;
     const computerSelection = getComputerChoice();
-    const playerSelection = prompt("Enter rock, paper, or scissors");
-    playRound(playerSelection, computerSelection);
-    if (playRound(playerSelection, computerSelection) == 1) {
-        alert("Computer wins");
+    for(let i = 0; i < number; i ++) {
+        const playerSelection = prompt("Enter rock, paper, or scissors");
+        playRound(playerSelection, computerSelection);
+        if (playRound(playerSelection, computerSelection) == 1) {
+            computerWins ++;
+        }
+        else {
+            playerWins ++;
+        }
     }
-    else {
-        alert("Player wins");
+
+    if (computerWins > playerWins) {
+        console.log("You Lose!");
+    }
+    else if (computerWins == playerWins){
+        console.log("It's a Tie!");
+    }
+    else if (computerWins < playerWins) {
+        console.log("You Win!");
     }
 }
 
-game();
+game(3);
