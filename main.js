@@ -39,10 +39,10 @@ function game() {
     const playerSelection = prompt("Enter rock, paper, or scissors");
     playRound(playerSelection, computerSelection);
     if (playRound(playerSelection, computerSelection) == 1) {
-        console.log("Computer wins");
+        alert("Computer wins");
     }
     else {
-        console.log("Player wins");
+        alert("Player wins");
     }
 }
 
