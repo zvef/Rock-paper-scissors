@@ -2,8 +2,9 @@
 let rock = "rock";
 let paper = "paper";
 let scissors = "scissors";
-
-number = Math.floor(Math.random()*3);
+let computerWins;
+let playerWins;
+let number = Math.floor(Math.random()*3);
 
 function getComputerChoice() {
     if(number == 0){
@@ -31,8 +32,6 @@ function playRound(playerSelection, computerSelection) {
         return 0
     }
 }
-let computerWins;
-let playerWins;
 
 function game() {
     const computerSelection = getComputerChoice();
@@ -45,6 +44,5 @@ function game() {
         alert("Player wins");
     }
 }
-
 
 game();
